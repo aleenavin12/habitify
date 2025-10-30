@@ -1,0 +1,27 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+.env
+venv/
+env/
+
+# Django migrations
+*/migrations/__pycache__/
+*/migrations/*.py
+
+# React / Node
+node_modules/
+build/
+dist/
+npm-debug.log
+yarn-error.log
+
+# OS / Editor junk
+.DS_Store
+.vscode/
+.idea/
+
+# Byte-compiled / cache
+*.pyc
