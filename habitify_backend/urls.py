@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from habits import views, auth_views  # ✅ import both habit views & auth views
+from habits import views, auth_views  
 
 router = routers.DefaultRouter()
 router.register(r'habits', views.HabitViewSet, basename='habit')
@@ -26,14 +26,11 @@ router.register(r'entries', views.HabitEntryViewSet, basename='habitentry')
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # ✅ API routes
     path('api/', include(router.urls)),
 
-    # ✅ Authentication routes
     path('api/register/', auth_views.register_user, name='register'),
     path('api/login/', auth_views.login_user, name='login'),
     path('api/logout/', auth_views.logout_user, name='logout'),
 
-    # ✅ Analytics & Streaks
     path('api/habits/analytics/', views.analytics_view, name='analytics'),
 ]
